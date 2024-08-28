@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.7" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.7" pages="3">
   <diagram name="upload" id="DGoV4dfiXk2cRcANRBJT">
     <mxGraphModel dx="1147" dy="590" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -97,6 +97,65 @@
         </mxCell>
         <mxCell id="FAi1Xt9_Flr8Va9FzJJN-7" value="file, err := os.CreateTemp(&quot;&quot;, fmt.Sprintf(&quot;%s-part%d&quot;, cn.UploadID, cn.PartNumber))" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="790" y="170" width="360" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pDZmzGSI58Y74RneQSWl" name="image upload">
+    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-8" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="50" y="50" width="640" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-6" value="Option 1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;verticalAlign=top;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry width="640" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="bImlciPLoTua8EUd4TqN-1" value="/api/v2/catalog/container-image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="20" y="60" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bImlciPLoTua8EUd4TqN-2" value="/api/v2/catalog/container-image/{id}/chunks" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="20" y="160" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bImlciPLoTua8EUd4TqN-3" value="/api/v2/catalog/container-image/{id}/chunks/{action}" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="20" y="250" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bImlciPLoTua8EUd4TqN-4" value="create artifact,&lt;div&gt;generate upload id,&lt;div&gt;save upload id to artifact,&lt;br&gt;&lt;div&gt;return artifact id&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="280" y="50" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-1" value="upload file chunk one by one and save to /uploads/&amp;lt;artifact id&amp;gt;/&lt;div&gt;&lt;font color=&quot;#ff0000&quot;&gt;not check file integrity&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="280" y="150" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-2" value="merge chunk to a completed file" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="280" y="240" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-3" value="/api/v2/catalog/container-image/{id}/status" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="20" y="390" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-4" value="action contains:&lt;div&gt;complete, abort,&lt;/div&gt;&lt;div&gt;merge, distribution?&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="140" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-5" value="get status&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-8">
+          <mxGeometry x="280" y="380" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-35" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="740" y="90" width="630" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-34" value="Option 2" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;dashed=1;dashPattern=8 8;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-35">
+          <mxGeometry width="630" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-7" value="/api/v2/catalog/container-image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-35">
+          <mxGeometry x="30" y="80" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-9" value="/api/v2/catalog/container-image/{id}/status" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-35">
+          <mxGeometry x="30" y="240" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-10" value="create artifact,&lt;div&gt;generate upload id,&lt;div&gt;save upload id to artifact,&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ff0000&quot;&gt;synchronous storage files,&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ff0000&quot;&gt;auto push image to registry,&lt;br&gt;&lt;/font&gt;&lt;div&gt;return artifact id&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-35">
+          <mxGeometry x="290" y="50" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="sUV5Icur8PG4Q27ryjuF-11" value="get status&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="sUV5Icur8PG4Q27ryjuF-35">
+          <mxGeometry x="290" y="230" width="300" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
