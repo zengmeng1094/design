@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.7">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.7" pages="2">
   <diagram name="upload" id="DGoV4dfiXk2cRcANRBJT">
     <mxGraphModel dx="1147" dy="590" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -71,6 +71,32 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="470" y="280" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="SnqzuBavTu8dVyhsPsdA" name="binary upload">
+    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FAi1Xt9_Flr8Va9FzJJN-1" value="/api/v2/catalog/binaries" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FAi1Xt9_Flr8Va9FzJJN-2" value="/api/v2/catalog/binaries/{id}/chunks" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FAi1Xt9_Flr8Va9FzJJN-3" value="/api/v2/catalog/binaries/{id}/chunks/{action}" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="280" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FAi1Xt9_Flr8Va9FzJJN-4" value="create artifact,&lt;div&gt;generate upload id,&lt;div&gt;save upload id to artifact,&lt;br&gt;&lt;div&gt;return artifact id&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="70" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FAi1Xt9_Flr8Va9FzJJN-6" value="artifact.NumberOfParts = req.ChunkedArtifactFile.TotalChunks" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="70" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FAi1Xt9_Flr8Va9FzJJN-7" value="file, err := os.CreateTemp(&quot;&quot;, fmt.Sprintf(&quot;%s-part%d&quot;, cn.UploadID, cn.PartNumber))" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="170" width="360" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
